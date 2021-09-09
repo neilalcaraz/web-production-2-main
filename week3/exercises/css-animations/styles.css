@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+section {
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Simple translations */
+
+.translate {
+  margin: 40px;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+
+}
+
+.translate-y:hover {
+  transform: translateY(-20px);
+}
+
+.translate-x:hover {
+  transform: translateX(+20px);
+}
+
+/* so if we want to animate a transform, we declare a 'transition' on the parent class */
+.scale-transition {
+  transition: transform 250ms;
+}
+
+.scale-transition:hover {
+  transform: scale(5)
+}
+
+/* Transforming */
+
+.transforming {
+  text-align: center;
+}
+
+.box {
+  margin: 40px auto;
+  width: 100px;
+  height: 100px;
+  /* this makes sure our text is centered */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: cyan;
+  color: white;
+}
+
+.rotate-forward {
+  transform: rotate(20deg);
+}
+
+.rotate-backward {
+  transform: rotate(-20deg);
+}
+
+.skew {
+  transform: skew(45deg)
+}
+
+/* Animating */
+.animating {
+  text-align: left;
+  margin: auto 10%;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin:10px;
+  border: none;
+  background: slateblue;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.btn:hover {
+  /* we can save ourselves the trouble of declaring the transform on each different class by just applying it to the button */
+  transform: translateX(30vw);
+}
+
+.linear {
+ /* linear maintains the same speed */
+  transition: transform 1000ms;
+  transition-timing-function: linear;
+}
+
+
+.ease-out {
+  /* ease-out starts out fast and slows down */
+  /* we can also just put the timing function as an argument in the transition value */
+  transition: transform 1000ms ease-out;
+}
+
+
+.ease-in {
+  /* ease-in starts out slow and speeds up */
+  /* we can also just put the timing function as an argument in the transition value */
+  transition: transform 1000ms ease-in;
+}
+
+
+.ease-in-out {
+  /* this starts fast, slows down, then speeds up */
+  /* we can also just put the timing function as an argument in the transition value */
+  transition: transform 1000ms ease-in-out;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: purple;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  color: white;
+  margin: 160px 50%;
+}
+
+/* we can also add a transition with javascript, these are in the script.js file! */
+#clickable-bigger {
+  transition: all 1000ms ease-out;
+}
+
+#clickable-move {
+  transition: all 1000ms ease-in;
+}
+
+.make-bigger {
+  width: 140px;
+}
+
+.move-left {
+  margin-left: 0;
+}
+
+#clickable-triangle {
+  transition: all 1000ms ease-in-out;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 100px solid red;
+  border-right: 100px solid transparent;
+  margin: 160px 50%;
+}
+
+
+/* complex CSS animations: creating our own */
+
+
+
+@keyframes translating {
+  0%  { transform: translate(0, 0);}
+  25% { transform: translate(140px, 0);}
+  50% { transform: translate(140px, 140px);}
+  75% { transform: translate(0, 140px);}
+  100%{ transform: translate(0, 0);}
+}
+
+.move-around {
+  animation: translating 4s linear infinite;
+}
+
+@keyframes rotating {
+  0%  { transform: rotate(0deg);}
+  100%{ transform: rotate(360deg);}
+}
+
+.rotate { animation: rotating 4s linear infinite;}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<!-- welcome to my super cool webpage -->
+<!-- this is a comment in html5 -->
+<head>
+<!-- Metadata goes here -->
+  <title> Neil's Web Pages </title>
+  <script src="script.js"></script>
+  <style src="styles.css"></style>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+      background-color: rgb(0, 0, 0);
+      text-align: center;
+      color: white;
+    }
+    .h1 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: xx-large;
+    }
+    .p1 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: large;
+    }
+    .pic{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 20%;
+    }
+</style>
+</head>
+<!-- Organization Line -->
+<body>
+  <main>
+      <section>
+        <h1> Neil Alcaraz </h1>
+        <img src="exslide.png" alt="" class="pic">
+      </section>
+    </main>
+</body>
+<!-- Organization Line -->
+<div>
+    <p1>My name is Neil, I'm a senior and im studying media studies. I'm looking forward to learing more about web development and hopfully this semester will be a fun one!</p1>
+</div>
+<div>
+    <script>
+      var img = new Image();
+img.src = 'button.png';
+img.onclick = function() {
+    window.location.href = 'https://fmundergrad.hunter.cuny.edu/~alcarazn/final%20285/index2.html';
+};
+document.body.appendChild(img);
+    </script>
+</div>
+</html>
