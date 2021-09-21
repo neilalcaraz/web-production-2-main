@@ -1,0 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  align-content: center;
+}
+canvas {
+  display: block;
+  height: 200px;
+  background-color: light blue;
+  background-image: linear-gradient(to bottom right, blue, pink, orange);
+}
